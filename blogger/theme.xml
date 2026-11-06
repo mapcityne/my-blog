@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' lang='ko' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<b:include data='blog' name='all-head-content'/>
+<title><b:if cond='data:view.isHomepage'><data:blog.title/> | 정부지원금·세금·연말정산 안내<b:else/><data:view.title.escaped/> | <data:blog.title/></b:if></title>
+<link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css' rel='stylesheet'/>
+<b:skin><![CDATA[
+:root{--brand:#14523f;--brand2:#1f7a5c;--ink:#16211d;--sub:#5b6b65;--line:#e3ebe7;--bg:#f5f8f6;--card:#fff;--accent:#e8a33d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--brand2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink)}
+.logo:hover{text-decoration:none}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
+.nav{display:flex;gap:22px;font-size:15px;font-weight:600}
+.nav a{color:var(--sub)}
+.nav a:hover{color:var(--brand);text-decoration:none}
+.search-form{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 14px}
+.search-form input{border:0;background:transparent;outline:0;font:inherit;font-size:14px;width:150px}
+.search-form button{border:0;background:var(--brand);color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.hero{background:radial-gradient(1200px 400px at 80% -10%,#2c8f6c 0,transparent 60%),linear-gradient(135deg,#0f3f31,#14523f 55%,#1a6a50);color:#fff;padding:72px 0 64px}
+.hero .eyebrow{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.hero h1{font-size:44px;line-height:1.25;margin:18px 0 14px;font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:#ffd58a}
+.hero p.lead{font-size:18px;opacity:.9;max-width:620px;margin:0 0 28px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:700;font-size:15px}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:#ffd58a;color:#173d30}
+.btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+.trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;font-size:14px;opacity:.92}
+.trust b{display:block;font-size:22px;font-weight:800}
+.cats{margin-top:-34px;position:relative;z-index:2}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(20,82,63,.07);color:var(--ink);transition:.2s}
+.cat:hover{text-decoration:none;transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,82,63,.12)}
+.cat .ic{font-size:26px}
+.cat b{display:block;font-size:16px;margin-top:6px}
+.cat span{font-size:13px;color:var(--sub)}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:56px 0 18px}
+.section-head h2{font-size:26px;margin:0;font-weight:800;letter-spacing:-.01em}
+.section-head p{margin:2px 0 0;color:var(--sub);font-size:15px}
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,82,63,.10)}
+.card-top{height:8px;background:linear-gradient(90deg,var(--brand),var(--brand2),var(--accent))}
+.card-body{padding:20px 20px 18px;display:flex;flex-direction:column;flex:1}
+.card .tag{align-self:flex-start;background:#e8f3ee;color:var(--brand);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+.card h3{font-size:19px;line-height:1.45;margin:12px 0 8px;font-weight:800}
+.card h3 a{color:var(--ink)}
+.card p{font-size:14.5px;color:var(--sub);margin:0 0 16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .meta{margin-top:auto;display:flex;justify-content:space-between;font-size:13px;color:#8a9893}
+.card .more{font-weight:700;color:var(--brand2)}
+.pager{display:flex;justify-content:center;gap:10px;margin:34px 0 10px}
+.pager a{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-weight:700;font-size:14px}
+.cta-band{margin:64px 0 0;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cta-band h3{margin:0 0 4px;font-size:21px}
+.cta-band p{margin:0;color:var(--sub);font-size:15px}
+.article-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;margin:36px auto 0}
+.article{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 44px}
+.crumb{font-size:13px;color:var(--sub);margin-bottom:10px}
+.article h1{font-size:32px;line-height:1.35;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+.article .a-meta{font-size:14px;color:var(--sub);padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.post-body h2{font-size:23px;margin:40px 0 14px;padding:0 0 0 12px;border-left:5px solid var(--brand);line-height:1.4}
+.post-body h3{font-size:19px;margin:28px 0 10px}
+.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px;border-radius:12px;overflow:hidden}
+.post-body th{background:#e8f3ee !important;color:var(--brand)}
+.post-body th,.post-body td{border:1px solid var(--line) !important;padding:10px 12px !important}
+.post-body blockquote{margin:20px 0;padding:14px 18px;background:#fff8ea;border-left:4px solid var(--accent);border-radius:0 10px 10px 0}
+.post-body ul{padding-left:22px}
+.post-body img{max-width:100%;height:auto;border-radius:12px}
+.side .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px;position:sticky;top:84px}
+.side h4{margin:0 0 10px;font-size:16px}
+.side p{font-size:14px;color:var(--sub);margin:0 0 12px}
+.side .links a{display:block;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--ink)}
+.notice{font-size:13.5px;color:var(--sub);background:var(--bg);border-radius:12px;padding:14px 16px;margin-top:34px}
+.footer{margin-top:80px;background:#0f2c23;color:#b9cac3;padding:48px 0 30px;font-size:14px}
+.footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+.footer b{color:#fff;font-size:16px}
+.footer a{color:#d7e6e0;display:block;padding:3px 0}
+.footer .copy{border-top:1px solid #23463a;margin-top:30px;padding-top:18px;font-size:13px}
+@media (max-width:900px){.nav{display:none}.cat-grid{grid-template-columns:repeat(2,1fr)}.post-grid{grid-template-columns:1fr 1fr}.article-wrap{grid-template-columns:1fr}.side .box{position:static}}
+@media (max-width:600px){body{font-size:16px}.hero{padding:48px 0 56px}.hero h1{font-size:31px}.search-form input{width:90px}.post-grid{grid-template-columns:1fr}.article{padding:26px 20px;border-radius:14px}.article h1{font-size:26px}.footer .cols{grid-template-columns:1fr}.trust{gap:18px}}
+]]></b:skin>
+</head>
+<body>
+<header class='topbar'>
+  <div class='wrap'>
+    <a class='logo' expr:href='data:blog.homepageUrl'><span class='logo-mark'>₩</span><data:blog.title/></a>
+    <nav class='nav'>
+      <a expr:href='data:blog.homepageUrl + &quot;search?q=근로장려금&quot;'>장려금</a>
+      <a expr:href='data:blog.homepageUrl + &quot;search?q=연말정산&quot;'>연말정산</a>
+      <a expr:href='data:blog.homepageUrl + &quot;search?q=지원금&quot;'>지원금</a>
+      <a href='https://mapcityne.blogspot.com/p/blog-page.html'>소개</a>
+    </nav>
+    <form class='search-form' expr:action='data:blog.searchUrl'>
+      <input aria-label='검색' name='q' placeholder='예: 근로장려금' type='text'/>
+      <button type='submit'>검색</button>
+    </form>
+  </div>
+</header>
+
+<b:if cond='data:view.isHomepage'>
+<section class='hero'>
+  <div class='wrap'>
+    <span class='eyebrow'>공식 자료 기반 생활 경제 가이드</span>
+    <h1>받을 수 있는 돈,<br/><em>놓치지 않게</em> 정리해 드립니다</h1>
+    <p class='lead'>정부지원금·세금·연말정산을 국세청·정책브리핑 등 공식 출처로 확인해 3분 안에 읽히게 정리합니다.</p>
+    <div class='hero-cta'>
+      <a class='btn btn-primary' href='#latest'>최신 정보 보기</a>
+      <a class='btn btn-ghost' href='https://mapcityne.blogspot.com/p/blog-page.html'>운영 원칙</a>
+    </div>
+    <div class='trust'>
+      <div><b>100%</b>공식 출처 표기</div>
+      <div><b>주 3회</b>새 정보 업데이트</div>
+      <div><b>3분</b>핵심만 요약</div>
+    </div>
+  </div>
+</section>
+<section class='cats'>
+  <div class='wrap cat-grid'>
+    <a class='cat' expr:href='data:blog.homepageUrl + &quot;search?q=근로장려금&quot;'><div class='ic'>💰</div><b>근로·자녀장려금</b><span>신청 기간과 지급일</span></a>
+    <a class='cat' expr:href='data:blog.homepageUrl + &quot;search?q=연말정산&quot;'><div class='ic'>🧾</div><b>연말정산</b><span>공제 항목과 절세 팁</span></a>
+    <a class='cat' expr:href='data:blog.homepageUrl + &quot;search?q=출산&quot;'><div class='ic'>👶</div><b>출산·육아 지원</b><span>달라지는 지원금</span></a>
+    <a class='cat' expr:href='data:blog.homepageUrl + &quot;search?q=세금&quot;'><div class='ic'>🏛️</div><b>세금·제도</b><span>신고 일정과 개정 사항</span></a>
+  </div>
+</section>
+</b:if>
+
+<main class='wrap'>
+<b:section class='main' id='page_body' showaddelement='false'>
+<b:widget id='Blog1' locked='true' title='글' type='Blog' version='2' visible='true'>
+<b:includable id='main'>
+  <b:if cond='data:view.isSingleItem'>
+    <b:loop values='data:posts' var='post'>
+    <div class='article-wrap'>
+      <article class='article'>
+        <div class='crumb'><a expr:href='data:blog.homepageUrl'>홈</a> › <b:if cond='data:view.isPage'>안내<b:else/>생활 경제 정보</b:if></div>
+        <h1><data:post.title/></h1>
+        <b:if cond='!data:view.isPage'><div class='a-meta'>게시 <data:post.date/> · 공식 출처 기반 정리</div><b:else/><div class='a-meta'/></b:if>
+        <div class='post-body'><data:post.body/></div>
+        <b:if cond='!data:view.isPage'><div class='notice'>이 글은 공식 자료를 바탕으로 한 일반 안내입니다. 개인별 자격과 금액은 홈택스·복지로 등 해당 기관에서 최종 확인하세요.</div></b:if>
+      </article>
+      <aside class='side'>
+        <div class='box'>
+          <h4>생활 지원금 노트</h4>
+          <p>받을 수 있는 돈을 놓치지 않도록 공식 자료로 정리합니다.</p>
+          <div class='links'>
+            <a expr:href='data:blog.homepageUrl + &quot;search?q=근로장려금&quot;'>💰 근로·자녀장려금</a>
+            <a expr:href='data:blog.homepageUrl + &quot;search?q=연말정산&quot;'>🧾 연말정산</a>
+            <a expr:href='data:blog.homepageUrl + &quot;search?q=출산&quot;'>👶 출산·육아 지원</a>
+            <a expr:href='data:blog.homepageUrl'>🏠 전체 글 보기</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    </b:loop>
+  <b:else/>
+    <div class='section-head' id='latest'>
+      <div>
+        <h2><b:if cond='data:view.isSearch'>검색 결과<b:else/>최신 정보</b:if></h2>
+        <p>지금 챙겨야 할 생활 돈 정보를 확인하세요.</p>
+      </div>
+    </div>
+    <b:if cond='data:posts.empty'>
+      <p>해당하는 글이 아직 없습니다. 다른 검색어로 찾아보세요.</p>
+    <b:else/>
+    <div class='post-grid'>
+      <b:loop values='data:posts' var='post'>
+      <div class='card'>
+        <div class='card-top'/>
+        <div class='card-body'>
+          <span class='tag'>생활 경제</span>
+          <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
+          <p><data:post.snippets.short/></p>
+          <div class='meta'><span><data:post.date/></span><a class='more' expr:href='data:post.url'>자세히 →</a></div>
+        </div>
+      </div>
+      </b:loop>
+    </div>
+    </b:if>
+    <div class='pager'>
+      <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>← 최신 글</a></b:if>
+      <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>이전 글 →</a></b:if>
+    </div>
+    <b:if cond='data:view.isHomepage'>
+    <div class='cta-band'>
+      <div>
+        <h3>매주 월·수·금, 새 정보가 올라옵니다</h3>
+        <p>신청 기간을 놓치지 않도록 즐겨찾기에 추가해 두세요.</p>
+      </div>
+      <a class='btn btn-primary' style='background:var(--brand);color:#fff' expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;'>RSS 구독</a>
+    </div>
+    </b:if>
+  </b:if>
+</b:includable>
+</b:widget>
+</b:section>
+</main>
+
+<footer class='footer'>
+  <div class='wrap'>
+    <div class='cols'>
+      <div>
+        <b>생활 지원금 노트</b>
+        <p>정부지원금·세금·연말정산을 공식 자료 기준으로 쉽게 정리합니다. 이 사이트의 정보는 일반 안내이며, 개인별 자격과 금액은 해당 기관에서 최종 확인하시기 바랍니다.</p>
+      </div>
+      <div>
+        <b>바로가기</b>
+        <a expr:href='data:blog.homepageUrl + &quot;search?q=근로장려금&quot;'>근로·자녀장려금</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search?q=연말정산&quot;'>연말정산</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search?q=출산&quot;'>출산·육아 지원</a>
+      </div>
+      <div>
+        <b>사이트 정보</b>
+        <a href='https://mapcityne.blogspot.com/p/blog-page.html'>소개</a>
+        <a href='https://mapcityne.blogspot.com/p/blog-page_06.html'>개인정보처리방침</a>
+        <a href='https://www.nts.go.kr'>국세청</a>
+      </div>
+    </div>
+    <div class='copy'>© 2026 생활 지원금 노트. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
